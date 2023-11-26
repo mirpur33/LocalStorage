@@ -24,8 +24,30 @@ function displayHistory() {
     //tbc
 }
 
+function getWeather(data) {
+     //tbc
+}
+
 function getLatLon(city) {
     console.log ("city = ", city);
+
+    let latLonUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${myapiKey}`;
+    fetch(latLonUrl) 
+
+    .then (function (resp) {
+        return resp.json();
+    })
+    .then(function (data) {
+        if (!data[0]) {
+            alert("city not found");
+        } else {
+            console.log("data = ", data);
+            getWeather(data[0]);
+        }
+    })
+    .catch(function (err) {
+        console.error(err)
+    });
 
 }
 

@@ -30,7 +30,7 @@ function getLatLon(city) {
 }
 
 function searchWeatherhandler(evt) {
-    if (inputEl.val()) {
+    if (!inputEl.val()) {
         return;
     }
 

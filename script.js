@@ -24,9 +24,31 @@ function displayHistory() {
   //tbc
 }
 
-function getWeather(data) {
+function displayWeather(city, data) {
   //tbc
 }
+
+function getWeather(data) {
+  //tbc
+  let {lat} = data.coord;
+  let {lon} = data.coord;
+  let city = data.name;
+
+  let weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${myapiKey}`;
+  fetch(weatherUrl)
+    .then(function (resp) {
+      return resp.json();
+    })
+    .then(function (data) {
+      console.log("data = ", data);
+      displayWeather(city, data);
+    })
+    .catch(function (err) {
+      console.error(err);
+    });
+
+}
+
 
 function getLatLon(city) {
   console.log("city = ", city);
@@ -38,7 +60,8 @@ function getLatLon(city) {
     })
     .then(function (data) {
       console.log("data = ", data);
-      getWeather(data[0]);
+      console.log("data.coord = ", data.coord);
+      getWeather(data);
     })
     .catch(function (err) {
       console.error(err);

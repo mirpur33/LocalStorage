@@ -30,6 +30,8 @@ function displayForecastWeather(data) {
 
 function displayCurrentWeather(city, data) {
   //tbc
+  let date = data.dt_txt.split(" ") [0];
+  console.log("date = ", date);
 }
 
 function displayWeather(city, data) {

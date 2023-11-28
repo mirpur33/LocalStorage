@@ -24,8 +24,18 @@ function displayHistory() {
   //tbc
 }
 
+function displayForecastWeather(data) {
+  //tbc
+}
+
+function displayCurrentWeather(city, data) {
+  //tbc
+}
+
 function displayWeather(city, data) {
   //tbc
+  displayCurrentWeather(city, data.list[0]);
+  displayForecastWeather(data.list);
 }
 
 function getWeather(data) {

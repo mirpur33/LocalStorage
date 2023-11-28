@@ -48,6 +48,29 @@ function displayCurrentWeather(city, data) {
   console.log("icon = ", icon);
   console.log("iconDescr = ", iconDescr);
 
+  let cardElem = $('<div>');
+  let cardBodyElem = $('<div>');
+  let headingElem = $('<h2>');
+  let weatherIconElem = $('<img>');
+  let tempElem = $('<p>');
+  let windElem = $('<p>');
+  let humidityElem = $('<p>');
+
+  headingElem.text(city + ' (' + date + ')');
+  weatherIconElem.attr('src', icon);
+  weatherIconElem.attr('alt', iconDescr);
+  headingElem.append(weatherIconElem);
+
+  tempElem.text('Temp: ' + temp + ' °C');
+  windElem.text('Wind: ' + wind + ' KPH');
+  humidityElem.text('Humidity: ' + humidity + '%');
+  cardBodyElem.append(headingElem, tempElem, windElem, humidityElem);
+  cardElem.append(cardBodyElem);
+
+  todayEl.html('');
+  console.log("cardElem = ", cardElem);
+  todayEl.append(cardElem);
+
 }
 
 function displayWeather(city, data) {
@@ -62,7 +85,7 @@ function getWeather(data) {
   let { lon } = data.coord;
   let city = data.name;
 
-  let weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${myapiKey}`;
+  let weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${myapiKey}&units=metric`;
   fetch(weatherUrl)
     .then(function (resp) {
       return resp.json();

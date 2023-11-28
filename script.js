@@ -32,6 +32,14 @@ function displayCurrentWeather(city, data) {
   //tbc
   let date = data.dt_txt.split(" ") [0];
   console.log("date = ", date);
+
+  let temp = data.main.temp;
+  let wind = data.wind.speed;
+  let humidity = data.main.humidity;
+
+  console.log("temp = ", temp);
+  console.log("wind = ", wind);
+  console.log("humidity = ", humidity);
 }
 
 function displayWeather(city, data) {

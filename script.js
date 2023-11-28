@@ -30,7 +30,7 @@ function displayForecastWeather(data) {
 
 function displayCurrentWeather(city, data) {
   //tbc
-  let date = data.dt_txt.split(" ") [0];
+  let date = data.dt_txt.split(" ")[0];
   console.log("date = ", date);
 
   let temp = data.main.temp;
@@ -40,6 +40,14 @@ function displayCurrentWeather(city, data) {
   console.log("temp = ", temp);
   console.log("wind = ", wind);
   console.log("humidity = ", humidity);
+
+  let icon =
+    "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+  let iconDescr = data.weather[0].description || data[0].main;
+
+  console.log("icon = ", icon);
+  console.log("iconDescr = ", iconDescr);
+
 }
 
 function displayWeather(city, data) {
@@ -50,8 +58,8 @@ function displayWeather(city, data) {
 
 function getWeather(data) {
   //tbc
-  let {lat} = data.coord;
-  let {lon} = data.coord;
+  let { lat } = data.coord;
+  let { lon } = data.coord;
   let city = data.name;
 
   let weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${myapiKey}`;
@@ -66,9 +74,7 @@ function getWeather(data) {
     .catch(function (err) {
       console.error(err);
     });
-
 }
-
 
 function getLatLon(city) {
   console.log("city = ", city);

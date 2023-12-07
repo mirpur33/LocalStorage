@@ -8,7 +8,7 @@ let inputEl = $("#search-input");
 
 let todayEl = $("#today");
 
-let forcastEl = $("#forcast");
+let forcastEl = $("#forecast");
 
 let historyEl = $("#history");
 
@@ -26,6 +26,9 @@ function displayHistory() {
 
 function displayForecastWeather(data) {
   //tbc
+  console.log("forecastEl = ", forcastEl);
+  // forcastEl.classList.remove("hide");
+  forcastEl[0].classList.remove("hide");
 }
 
 function displayCurrentWeather(city, data) {

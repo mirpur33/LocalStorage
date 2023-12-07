@@ -1,0 +1,23 @@
+.day1 {
+    background-color: lightblue;
+}
+
+.day2 {
+    background-color: lightcoral;
+}
+
+.day3 {
+    background-color: lightcyan;
+}
+
+.day4 {
+    background-color: lightgoldenrodyellow;
+}
+
+.day5 {
+    background-color: lightgray;
+}
+
+.hide{
+    display: none;
+}

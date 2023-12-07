@@ -29,7 +29,26 @@ function displayForecastWeather(data) {
   console.log("forecastEl = ", forcastEl);
   // forcastEl.classList.remove("hide");
   forcastEl[0].classList.remove("hide");
-}
+
+  let headingElem = document.getElementById("date1");
+  let weatherIconElem = $('<img>');
+  let tempElem = document.getElementById("temp1");
+  let windElem = document.getElementById("wind1");
+  let humidityElem = document.getElementById("humidity1");
+
+  let date = data[0].dt_txt.split(" ")[0];
+  console.log("date = ", date);
+
+  let temp = data[0].main.temp;
+  let wind = data[0].wind.speed;
+  let humidity = data[0].main.humidity;
+
+  console.log("headingElem = ", headingElem);
+  headingElem.innerText=(date);
+  tempElem.innerText=`Temp: ${temp}`;
+  windElem.innerText=(wind);
+  humidityElem.innerText=(humidity);
+ }
 
 function displayCurrentWeather(city, data) {
   //tbc

@@ -48,6 +48,25 @@ function displayForecastWeather(data) {
   tempElem.innerText=`Temp: ${temp}`;
   windElem.innerText=(wind);
   humidityElem.innerText=(humidity);
+
+  headingElem = document.getElementById("date2");
+  weatherIconElem = $('<img>');
+  tempElem = document.getElementById("temp2");
+  windElem = document.getElementById("wind2");
+  humidityElem = document.getElementById("humidity2");
+
+  date = data[0].dt_txt.split(" ")[0];
+  console.log("date = ", date);
+
+  temp = data[0].main.temp;
+  wind = data[0].wind.speed;
+  humidity = data[0].main.humidity;
+
+  console.log("headingElem = ", headingElem);
+  headingElem.innerText=(date);
+  tempElem.innerText=`Temp: ${temp}`;
+  windElem.innerText=(wind);
+  humidityElem.innerText=(humidity);
  }
 
 function displayCurrentWeather(city, data) {

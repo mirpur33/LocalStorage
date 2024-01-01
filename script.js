@@ -25,6 +25,10 @@ function displayHistory() {
 }
 
 function displayForecastWeather(data) {
+  console.log(data);
+  // Write a function that filters the dt_text key to find the next 5 days
+  // Your algorithm should loop through the data object and filter for the next day
+  // 2023-12-13 || 2023-12-14 
   //tbc
   console.log("forecastEl = ", forcastEl);
   // forcastEl.classList.remove("hide");
@@ -46,8 +50,8 @@ function displayForecastWeather(data) {
   console.log("headingElem = ", headingElem);
   headingElem.innerText=(date);
   tempElem.innerText=`Temp: ${temp}`;
-  windElem.innerText=(wind);
-  humidityElem.innerText=(humidity);
+  windElem.innerText=`Wind: ${wind}`;
+  humidityElem.innerText=`Humidity: ${humidity}`;
 
   headingElem = document.getElementById("date2");
   weatherIconElem = $('<img>');
@@ -58,17 +62,18 @@ function displayForecastWeather(data) {
   date = data[0].dt_txt.split(" ")[0];
   console.log("date = ", date);
 
-  temp = data[0].main.temp;
-  wind = data[0].wind.speed;
-  humidity = data[0].main.humidity;
+  temp = data[+4].main.temp;
+  wind = data[+4].wind.speed;
+  humidity = data[+4].main.humidity;
 
   console.log("headingElem = ", headingElem);
   headingElem.innerText=(date);
   tempElem.innerText=`Temp: ${temp}`;
-  windElem.innerText=(wind);
-  humidityElem.innerText=(humidity);
+  windElem.innerText=`Wind: ${wind}`;
+  humidityElem.innerText=`Humidity: ${humidity}`;
  }
 
+ 
 function displayCurrentWeather(city, data) {
   //tbc
   let date = data.dt_txt.split(" ")[0];

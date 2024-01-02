@@ -27,3 +27,17 @@
     margin:0;
     padding:0;
 }
+
+/* Search history */
+#search-history{
+    font-size: 1.2rem;
+    color: rgba(15, 14, 14, 0.769);
+  
+  }
+  #search-button {
+    cursor: pointer;
+  }
+  #city-history {
+    cursor: pointer;
+  }
+  /* tbc */

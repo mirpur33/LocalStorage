@@ -41,3 +41,29 @@
     cursor: pointer;
   }
   /* tbc */
+
+  header {
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: rgba(227, 93, 16, 0.234);
+    border: 1px solid rgba(255, 255, 255, 0.394);
+    border-radius: 1rem; 
+    text-align: center; 
+    box-shadow: 0 0 10px rgb(227, 131, 72); 
+    }
+    
+    body{
+        background-image: url('/images/Walpaper.png');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    
+    .container{
+        padding: 20px 70px;
+    }
